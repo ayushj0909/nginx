@@ -3,8 +3,8 @@
 replicaCount: 2
 
 image:
-  repository: nginx
-  tag: "1.21.6"
+  repository: 214964805500.dkr.ecr.ap-south-1.amazonaws.com/nginx
+  tag: "46e754c-3"
   pullPolicy: IfNotPresent
 
 service:
