@@ -1,0 +1,42 @@
+# values.yaml
+
+replicaCount: 2
+
+image:
+  repository: nginx
+  tag: "1.21.6"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+configMap:
+  enabled: true
+  name: nginx-config
+  data:
+    default.conf: |
+      server {
+          listen 80;
+          server_name localhost;
+
+          location / {
+              root   /usr/share/nginx/html;
+              index  index.html index.htm;
+          }
+      }
+
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: "100m"
+  limits:
+    memory: "128Mi"
+    cpu: "200m"
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
