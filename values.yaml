@@ -1,7 +1,7 @@
 replicaCount: 2
 image:
   repository: 214964805500.dkr.ecr.ap-south-1.amazonaws.com/nginx
-  tag: 99c89b6-9
+  tag: db02e11-10
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
