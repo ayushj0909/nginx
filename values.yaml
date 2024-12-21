@@ -1,16 +1,11 @@
-# values.yaml
-
 replicaCount: 2
-
 image:
   repository: 214964805500.dkr.ecr.ap-south-1.amazonaws.com/nginx
-  tag: "46e754c-3"
+  tag: 99c89b6-9
   pullPolicy: IfNotPresent
-
 service:
   type: ClusterIP
   port: 80
-
 configMap:
   enabled: true
   name: nginx-config
@@ -25,18 +20,13 @@ configMap:
               index  index.html index.htm;
           }
       }
-
 resources:
   requests:
-    memory: "64Mi"
-    cpu: "100m"
+    memory: 64Mi
+    cpu: 100m
   limits:
-    memory: "128Mi"
-    cpu: "200m"
-
+    memory: 128Mi
+    cpu: 200m
 nodeSelector: {}
-
 tolerations: []
-
 affinity: {}
-
